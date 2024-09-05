@@ -15,7 +15,7 @@ dbwebb/jsramverk/
 5. Update docs.mjs:
     getOne() - Add rowid in SELECT query to use it in doc.ejs form
 
-    Add updateOne()
+    Add updateOne() - Add function to update a document.
 
 6. Update app.mjs:
     Change from 'app.post("/"...)' to 'app.post("/add"...)'
