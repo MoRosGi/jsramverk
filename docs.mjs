@@ -30,7 +30,7 @@ const docs = {
 
     addOne: async function addOne(body) {
         let db = await openDb();
-
+        // Future update: Remove values to avoid sending empty body
         try {
             return await db.run(
                 'INSERT INTO documents (title, content) VALUES (?, ?)',
@@ -44,7 +44,7 @@ const docs = {
         }
     },
 
-    updateOne: async function updateOne(body, id) {
+    updateOne: async function updateOne(body) {
         let db = await openDb();
 
         try {
@@ -52,7 +52,7 @@ const docs = {
                 'UPDATE documents SET title=?, content=? WHERE rowid=?',
                 body.title,
                 body.content,
-                id,
+                body.id,
             );
         } catch (e) {
             console.error(e);
