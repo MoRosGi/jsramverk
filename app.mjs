@@ -34,8 +34,7 @@ app.post("/add", async (req, res) => {
 });
 
 app.post("/update", async (req, res) => {
-    console.log("update");
-    const result = await documents.updateOne(req.body, req.params.id);
+    const result = await documents.updateOne(req.body);
 
     return res.redirect(`/`);
 });
